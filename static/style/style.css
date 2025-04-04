@@ -1,0 +1,125 @@
+/* ======================================== css style sheets ======================================== */
+@import "./css-files/header.css";
+@import "./css-files/main.css";
+@import "./css-files/footer.css";
+
+/* ============================== google fonts ============================== */
+/* body font */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+/* h1 => welcome */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Londrina+Sketch&family=Matemasie&display=swap');
+/* h2 => head section font */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Matemasie&display=swap');
+/* copy-right at span */
+@import url('https://fonts.googleapis.com/css2?family=Jacques+Francois+Shadow&display=swap');
+
+/* ==================== start Global rules ==================== */
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:root {
+  /* color */
+  --main-clr: #eb5b38;
+  --secondry-clr: #272a2d;
+  --third-clr: #e6e4dc;
+  --forth-clr: #347ccb;
+
+  /* font size */
+  --welc-font: 50px;
+  --head-section-font: 30px;
+  --lg-font: 20px;
+  --sm-font: 15px;
+  
+  /* padding */
+  --lg-padding-top-section: 100px;
+  --lg-padding-bottom-section: 100px;
+  --sm-padding-top-section: 50px;
+  --sm-padding-bottom-section: 50px;
+
+  /* margin */
+
+  /* border radius */
+  --border-radius: 10px;
+
+  /* transition */
+  --main-transition: 0.3s;
+}
+
+body {
+  position: relative;
+  font-family: "Lato", sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  color: var(--main-clr);
+  background-color: var(--secondry-clr);
+}
+
+/* only in chrome */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--secondry-clr);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: var(--border-radius);
+  background-color: var(--main-clr);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--forth-clr);
+}
+/* only in chrome */
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+input,
+select,
+textarea {
+  outline: none;
+}
+
+.container {
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+@media (max-width: 1199px) {
+  .container {
+    margin-left: 45px;
+    margin-right: 45px;
+  }
+}
+@media (max-width: 991px) {
+  .container {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+/* ==================== end Global rules ==================== */
+
+
+
+
+
+
+
+

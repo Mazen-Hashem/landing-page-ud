@@ -1,0 +1,91 @@
+/* start header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 99999;
+  height: 70px;
+  background-color: var(--secondry-clr);
+}
+
+header .container {
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+
+/* logo */
+header .container .logo {
+  height: inherit;
+}
+
+header .container .logo a {
+  height: inherit;
+  display: flex;
+}
+
+header .container .logo a img {
+  height: inherit;
+}
+
+
+/* navbar */
+header .container nav {
+  height: inherit;
+  overflow-x: auto;
+}
+header .container nav::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+header .container nav ul {
+  height: inherit;
+  display: flex;
+}
+
+header .container nav ul li {
+  height: inherit;
+}
+
+header .container nav ul li .nav-link {
+  height: inherit;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: var(--lg-font);
+  color: var(--main-clr);
+  transition: color var(--main-transition) linear, background-color var(--main-transition) linear;
+}
+header .container nav ul li .nav-link:hover {
+  color: var(--secondry-clr);
+  background-color: var(--main-clr);
+}
+/* active => JS */
+header .container nav ul li .active--nav-link {
+  color: var(--secondry-clr);
+  background-color: var(--main-clr);
+}
+
+
+
+@media (max-width: 767px) {
+  header {
+    height: 40px;
+  }
+  
+  header .container {
+    gap: 5px;
+  }
+  
+  /* navbar */
+  header .container nav ul li .nav-link {
+    padding: 0 10px;
+    font-size: var(--sm-font);
+  }
+}
+/* end header */

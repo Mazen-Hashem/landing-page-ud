@@ -1,0 +1,341 @@
+/* start main */
+main {
+  position: relative;
+  z-index: 10;
+  background-color: var(--secondry-clr);
+}
+
+
+/* start welcome section */
+main .welcome-section {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 70px);
+  overflow: hidden;
+}
+
+/* article => welcome box */
+main .welcome-section .welcome-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  opacity: 0;
+  transition: opacity var(--main-transition) linear;
+}
+/* avtive => JS */
+main .welcome-section .active--welcome-box {
+  opacity: 1;
+  z-index: 1;
+}
+
+main .welcome-section .welcome-box figure {
+  position: relative;
+  width: inherit;
+  height: inherit;
+}
+
+main .welcome-section .welcome-box figure img {
+  width: inherit;
+  height: inherit;
+  display: block;
+  object-position: center;
+  object-fit: cover;
+}
+
+main .welcome-section .welcome-box figure figcaption {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  z-index: 999;
+  transform: translate(-50%, -50%);
+  max-width: 650px;
+  padding: 0 10px;
+}
+
+main .welcome-section .welcome-box figure figcaption .welcome-head {
+  font-family: "Londrina Sketch", sans-serif;
+  margin-bottom: 30px;
+  color: var(--third-clr);
+  font-size: var(--welc-font);
+  text-shadow: 5px 5px 5px var(--main-clr);
+}
+/* active => JS */
+main .welcome-section .welcome-box figure figcaption .active--welcome-head {
+  transform: translateY(50px);
+  opacity: 0;
+  animation: headAppearance 0.7s 0.3s forwards;
+}
+
+main .welcome-section .welcome-box figure figcaption .welcome-parag {
+  line-height: 1.5;
+  color: var(--forth-clr);
+  font-size: var(--lg-font);
+  text-shadow: 5px 5px 5px black;
+}
+/* active => JS */
+main .welcome-section .welcome-box figure figcaption .active--welcome-parag {
+  transform: translateY(50px);
+  opacity: 0;
+  animation: paragAppearance 0.7s 0.6s forwards;
+}
+
+/* welcome bullets */
+main .welcome-section .welcome-bullets {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+main .welcome-section .welcome-bullets .bullet {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid var(--third-clr);
+  background-color: var(--third-clr);
+}
+/* active => JS */
+main .welcome-section .welcome-bullets .active-bullet {
+  background-color: var(--main-clr);
+}
+
+
+@media (max-width: 767px) {
+  main .welcome-section {
+    height: calc(100vh - 40px);
+  }
+
+
+  main .welcome-section .welcome-box figure figcaption {
+    left: 50%;
+    max-width: 100%;
+    width: 100%;
+  }
+
+
+  main .welcome-section .welcome-box figure figcaption .welcome-head {
+    margin-bottom: 20px;
+    font-size: calc(var(--welc-font) - 65%);
+  }
+
+
+  main .welcome-section .welcome-box figure figcaption .welcome-parag {
+    font-size: var(--sm-font);
+  }
+
+
+  main .welcome-section .welcome-bullets .bullet {
+    width: 13px;
+    height: 13px;
+  }
+}
+
+
+@keyframes  headAppearance{
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes  paragAppearance{
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* end welcome section */
+
+
+/* start container */
+main .container {
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 -10px 10px black,
+              10px 0 10px black,
+              -10px 0 10px black,
+              0 10px 10px black;
+}
+
+
+main .container .section-main {
+  position: relative;
+  overflow: hidden;
+  padding-top: var(--lg-padding-top-section);
+  padding-bottom: var(--lg-padding-bottom-section);
+}
+main .container .section-main:nth-of-type(odd)::after,
+main .container .section-main:nth-of-type(even)::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-clr);
+}
+main .container .section-main:nth-of-type(odd)::after {
+  right: -100%;
+  transition: right var(--main-transition) linear;
+}
+main .container .section-main:nth-of-type(even)::before {
+  left: -100%;
+  transition: left var(--main-transition) linear;
+}
+/* active => JS */
+main .container .active--section-main:nth-of-type(odd)::after {
+  right: 0;
+}
+main .container .active--section-main:nth-of-type(even)::before {
+  left: 0;
+}
+
+
+main .container .section-main .rocket-img {
+  position: absolute;
+  right: 0;
+  bottom: -100%;
+  z-index: -1;
+  transition: bottom var(--main-transition) linear, transform var(--main-transition) linear;
+}
+/* active => JS */
+main .container .section-main .active--rocket-img {
+  bottom: 50%;
+  transform: translateY(50%);
+}
+
+
+main .container .section-main .section-main--head {
+  font-family: "Matemasie", sans-serif;
+  width: fit-content;
+  color: var(--third-clr);
+  font-size: var(--head-section-font);
+  transition: color var(--main-transition) linear;
+}
+/* active => JS */
+main .container .section-main .active--section-main--head {
+  color: var(--forth-clr);
+}
+
+
+main .container .section-main .section-main--line {
+  position: relative;
+  width: 50%;
+  height: 5px;
+  margin: 30px 0 50px;
+  background-color: var(--third-clr);
+  overflow: hidden;
+}
+main .container .section-main .section-main--line::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--forth-clr);
+  transition: left var(--main-transition) linear;
+}
+/* active => JS */
+main .container .section-main .active--section-main--line::before {
+  left: 0;
+}
+
+
+main .container .section-main .section-main--parag {
+  width: 70%;
+  line-height: 1.5;
+  color: var(--main-clr);
+  font-size: var(--lg-font);
+  transition: color var(--main-transition) linear;
+}
+main .container .section-main .section-main--parag:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+/* active => JS */
+main .container .section-main .active--section-main--parag {
+  color: var(--secondry-clr);
+}
+
+
+@media (max-width: 767px) {
+  main .container {
+    box-shadow: 0 -5px 5px black,
+                5px 0 5px black,
+                -5px 0 5px black,
+                0 5px 5px black;
+  }
+
+
+  main .container .section-main {
+    padding-top: var(--sm-padding-top-section);
+    padding-bottom: var(--sm-padding-bottom-section);
+  }
+
+
+  main .container .section-main:nth-of-type(odd)::after,
+  main .container .section-main:nth-of-type(even)::before {
+    top: unset;
+    right: 0;
+    left: 0;
+    bottom: -100%;
+    transition: bottom var(--main-transition) linear;
+  }
+  /* active => JS */
+  main .container .active--section-main:nth-of-type(odd)::after,
+  main .container .active--section-main:nth-of-type(even)::before {
+    bottom: 0;
+  }
+  
+
+  main .container .section-main .rocket-img {
+    right: 50%;
+    transform: translate(50%, 0);
+    opacity: 0.5;
+  }
+  /* active => JS */
+  main .container .section-main .active--rocket-img {
+    transform: translate(50%, 50%);
+  }
+  
+
+  main .container .section-main .section-main--head {
+    font-size: calc(var(--head-section-font) - 40%);
+  }
+  
+
+  main .container .section-main .section-main--line {
+    width: 80%;
+    height: 3px;
+    margin: 20px 0 30px;
+  }
+  
+  
+  main .container .section-main .section-main--parag {
+    width: 100%;
+    font-size: var(--sm-font);
+  }
+  main .container .section-main .section-main--parag:not(:last-of-type) {
+    margin-bottom: 15px;
+  }
+}
+/* end container */
+
+/* end main */
+
+
